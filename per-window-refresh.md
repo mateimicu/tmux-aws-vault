@@ -10,13 +10,23 @@ One option would be to use an [update](./scripts/set_variables.sh) and configure
 For BASH, you can this to `~/.bashrc`
 
 ```bash
-export PROMPT_COMMAND="$HOME/.tmux/plugins/tmux-aws-vault/scripts/set_variables.sh"
+TMUX_UPDATE_SCRIPT="~/.tmux/plugins/tmux-aws-vault/scripts/set_variables.sh"
+
+# execute on a new shell, trying to catch `aws-vault exec`
+source "$TMUX_UPDATE_SCRIPT"
+
+export PROMPT_COMMAND="$TMUX_UPDATE_SCRIPT"
 ```
 
 For ZSH you can this to `~/.zshrc`
 
-```zsh
+```bash 
+TMUX_UPDATE_SCRIPT="~/.tmux/plugins/tmux-aws-vault/scripts/set_variables.sh"
+
+# execute on a new shell, trying to catch `aws-vault exec`
+source "$TMUX_UPDATE_SCRIPT" 
+
 precmd() {
-    $HOME/.tmux/plugins/tmux-aws-vault/scripts/set_variables.sh
+    "$TMUX_UPDATE_SCRIPT"
 }
 ```
