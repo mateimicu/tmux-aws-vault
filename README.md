@@ -2,6 +2,9 @@
 
 Show the current [aws-vault][aws-vault] context and how much time you have left in the current session.
 
+This only works if you `aws-vault exec` before running `tmux`, so the tmux session inherits the environment variables.
+If you run `aws-vault exec` inside `tmux` it won't be able to pick it up.
+
 ## Installation
 
 ### Dependencies
