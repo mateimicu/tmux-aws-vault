@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # based on https://stackoverflow.com/questions/63362712/ways-to-find-out-how-soon-the-aws-session-expires/72291361#72291361
 aws_session_time_left() {
   zulu_time_now=$1
