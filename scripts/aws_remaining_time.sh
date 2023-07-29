@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-AWS_EXPIRATION_TIME=${AWS_SESSION_EXPIRATION:-$AWS_CREDENTIAL_EXPIRATION}
+AWS_COMPOSED_VALUE=${AWS_SESSION_EXPIRATION:-$AWS_CREDENTIAL_EXPIRATION}
+AWS_EXPIRATION_TIME=${AWS_COMPOSED_VALUE:-$TMUX_AWS_CREDENTIAL_TIME}
 # based on https://stackoverflow.com/questions/63362712/ways-to-find-out-how-soon-the-aws-session-expires/72291361#72291361
 aws_session_time_left() {
   zulu_time_now=$1
