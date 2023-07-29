@@ -19,9 +19,8 @@ aws_session_time_left() {
 
 
 if [ -z "$AWS_EXPIRATION_TIME" ]; then
-    time_left=
+    time_left=t 
 else
-  echo "AWS_EXPIRATION_TIME is set and not empty"
     time_left=$(aws_session_time_left "`date -u +'%Y-%m-%dT%H:%M:%SZ'`")
 fi
 
