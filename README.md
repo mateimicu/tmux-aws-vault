@@ -45,4 +45,9 @@ Basic Example:
 
     set -g status-right '#{aws_vault}:#{aws_remaining_time}'
 
+
+### Experiments
+
+* [How to update the values for each window](./per-window-refresh.md
+
 [aws-vault]: https://github.com/99designs/aws-vault
