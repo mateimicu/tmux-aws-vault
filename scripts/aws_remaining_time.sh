@@ -19,7 +19,7 @@ aws_session_time_left() {
 
 
 if [ -z "$AWS_EXPIRATION_TIME" ]; then
-    time_left=t 
+    time_left=
 else
     time_left=$(aws_session_time_left "`date -u +'%Y-%m-%dT%H:%M:%SZ'`")
 fi
